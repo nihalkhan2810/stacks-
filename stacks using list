@@ -5,10 +5,18 @@ class stack:
         self.items.append(item)
     def pop(self):
         self.items.pop()
+    def isempty(self):
+        return self.items == []
+    def peak(self):
+        if not self.isempty():
+            return self.items[-1]
     def get_stack(self):
         return self.items
 i = stack()
 i.push("a")
 i.push("b")
-i.pop()
-print(i.get_stack())
+i.push("c")
+i.push("d")
+i.push("e")
+print(i.peak())
+print(i.isempty())
