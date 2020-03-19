@@ -1,0 +1,39 @@
+class node:
+    def __init__(self,data):
+        self.data = data
+        self.next  = None
+class linkedlist:
+    def __init__(self):
+        self.head = None
+    def printlist(self):
+        cur_node = self.head
+        while cur_node.next:
+            print(cur_node.data)
+            cur_node = cur_node.next
+    def isempty(self):
+        return True if self.head is None else False
+    def Push(self,data):
+        new_node = node(data)
+        if self.head is None:
+            self.head  = new_node
+        new_node = node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def pop(self):
+        if self.isempty():
+            print("empty stack,UNDERFLOW")
+            return
+        popped = self.head.data
+        self.head = self.head.next
+        return popped
+
+llist = linkedlist()
+llist.Push("a")
+llist.Push("b")
+llist.Push("c")
+llist.Push("d")
+llist.Push("e")
+
+llist.printlist()
+print("the popped element is",llist.pop())
