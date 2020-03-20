@@ -12,11 +12,15 @@ class stack:
             return self.items[-1]
     def get_stack(self):
         return self.items
+    def printlist(self):
+        for i in self.items:
+            print(i)
 i = stack()
 i.push("a")
 i.push("b")
 i.push("c")
 i.push("d")
 i.push("e")
+i.printlist()
 print(i.peak())
 print(i.isempty())
